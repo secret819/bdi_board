@@ -29,7 +29,7 @@ public class BoardInfoVO implements Serializable {
 	private String bifile;
 
 	/** 게시판등록일자. */
-	private String bicredate;
+	private String bicredat;
 
 	/** 게시판수정일자. */
 	private String bimoddat;
@@ -40,17 +40,25 @@ public class BoardInfoVO implements Serializable {
 	/** 게시판활성여부. */
 	private Byte biactive;
 
-	/** 유저정보. */
-	private UserInfoVO userInfo;
+	private Integer uinum;
+	
+	private String uiname;
+	
 
-	/** 댓글정보 목록. */
-	private Set<CommentInfoVO> commentInfoSet;
+	public String getUiname() {
+		return uiname;
+	}
 
-	/**
-	 * 생성자.
-	 */
-	public BoardInfoVO() {
-		this.commentInfoSet = new HashSet<CommentInfoVO>();
+	public void setUiname(String uiname) {
+		this.uiname = uiname;
+	}
+
+	public Integer getUinum() {
+		return uinum;
+	}
+
+	public void setUinum(Integer uinum) {
+		this.uinum = uinum;
 	}
 
 	/**
@@ -135,8 +143,8 @@ public class BoardInfoVO implements Serializable {
 	 * @param bicredate
 	 *            게시판등록일자
 	 */
-	public void setBicredate(String bicredate) {
-		this.bicredate = bicredate;
+	public void setBicredat(String bicredat) {
+		this.bicredat = bicredat;
 	}
 
 	/**
@@ -144,8 +152,8 @@ public class BoardInfoVO implements Serializable {
 	 * 
 	 * @return 게시판등록일자
 	 */
-	public String getBicredate() {
-		return this.bicredate;
+	public String getBicredat() {
+		return this.bicredat;
 	}
 
 	/**
@@ -204,55 +212,7 @@ public class BoardInfoVO implements Serializable {
 	public Byte getBiactive() {
 		return this.biactive;
 	}
-
-	/**
-	 * 유저정보을 설정합니다..
-	 * 
-	 * @param userInfo
-	 *            유저정보
-	 */
-	public void setUserInfo(UserInfoVO userInfo) {
-		this.userInfo = userInfo;
-	}
-
-	/**
-	 * 유저정보을 가져옵니다..
-	 * 
-	 * @return 유저정보
-	 */
-	public UserInfoVO getUserInfo() {
-		return this.userInfo;
-	}
-
-	/**
-	 * 댓글정보 목록을 설정합니다..
-	 * 
-	 * @param commentInfoSet
-	 *            댓글정보 목록
-	 */
-	public void setCommentInfoSet(Set<CommentInfoVO> commentInfoSet) {
-		this.commentInfoSet = commentInfoSet;
-	}
-
-	/**
-	 * 댓글정보를 추가합니다..
-	 * 
-	 * @param commentInfo
-	 *            댓글정보
-	 */
-	public void addCommentInfo(CommentInfoVO commentInfo) {
-		this.commentInfoSet.add(commentInfo);
-	}
-
-	/**
-	 * 댓글정보 목록을 가져옵니다..
-	 * 
-	 * @return 댓글정보 목록
-	 */
-	public Set<CommentInfoVO> getCommentInfoSet() {
-		return this.commentInfoSet;
-	}
-
+	
 	/**
 	 * {@inheritDoc}
 	 */
@@ -287,6 +247,13 @@ public class BoardInfoVO implements Serializable {
 			return false;
 		}
 		return true;
+	}
+
+	@Override
+	public String toString() {
+		return "BoardInfoVO [binum=" + binum + ", bititle=" + bititle + ", bitext=" + bitext + ", bifile=" + bifile
+				+ ", bicredat=" + bicredat + ", bimoddat=" + bimoddat + ", bicnt=" + bicnt + ", biactive=" + biactive
+				+ ", uinum=" + uinum + "]";
 	}
 
 }
