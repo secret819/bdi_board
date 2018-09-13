@@ -59,9 +59,10 @@
 			</form>
 			<c:forEach items="${ciList}" var="ci">
 				<div class="form-group">
-					${ci.uiname} : ${ci.citext} [${ci.cicredat}] 
+					${ci.uiname} : ${ci.citext} [${ci.cicredat}]
 					<c:if test="${ci.uinum eq user.uinum}">
-						<a href="/comment/commentDelete?cinum=${ci.cinum}&binum=${ci.binum}">x</a>
+						<a
+							href="/comment/commentDelete?cinum=${ci.cinum}&binum=${ci.binum}">x</a>
 					</c:if>
 				</div>
 			</c:forEach>
